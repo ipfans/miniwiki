@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>  
+    <head>
+        <title>{{ title }} - Wiki</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="shortcut icon" type="image/png" href="/static/img/favicon.png">
+        <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <script src="//code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"
+        charset="utf-8"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/highlight.min.js"></script>
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/styles/github.min.css">
+        {% block moreStyles %}{% endblock %}
+        {% block moreScripts %}{% endblock %}
+        <script src="/static/js/editor.js" type="text/javascript" charset="utf-8"></script>
+        <link rel="stylesheet" href="/static/css/common.css">
+        <script src="/static/js/common.js" type="text/javascript" charset="utf-8"></script>
+    </head>
+    <body role="document">
+        <div class="container" role="main">
+        {% block content %}{% endblock %}
+            <div class="page-footer clearfix">
+                <div class="poweredby">
+                    <a href="https://github.com/ipfans/miniwiki" target="_blank">Powered by MiniWiki</a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

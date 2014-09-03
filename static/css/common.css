@@ -1,0 +1,368 @@
+body {
+        padding-bottom: 30px;
+}
+
+a {
+    outline: none !important;
+}
+
+a .fa,
+button .fa {
+    margin-right: 7px;
+}
+
+pre {
+    background: #f8f8f8;
+}
+
+/*
+  Header
+*/
+
+.page-header {
+    border-bottom: 1px solid #ddd;
+    margin: 40px 0 15px;
+}
+.page-header .btn-back {
+    float: left;
+    margin-right: 12px;
+    margin-top: 0.2em;
+    color: #666;
+}
+
+.page-header .btn-back .fa {
+    margin-right: 0;
+}
+
+.page-header h1 {
+    display: inline-block;
+    margin-top: 0;
+    font-size: 30px;
+    line-height: 35px;
+}
+
+.page-header .btn-actions {
+    float: right;
+}
+
+.page-header .btn-actions .btn-info:first-child,
+.page-header .btn-actions .btn-primary:first-child {
+    width: 95px;
+}
+
+.page-header .btn-actions .dropdown-menu {
+    min-width: 0;
+}
+
+/*
+  Footer
+*/
+
+.page-footer {
+    border-top: 1px solid #ddd;
+    margin: 15px 0 0 0;
+    padding: 15px 0 0 0;
+    color: #888;
+}
+
+.page-footer .page-revision {
+    float: left;
+    color: #999;
+    font-size: 14px;
+}
+
+.page-footer .poweredby {
+    float: right;
+}
+
+/*
+  Page.show
+*/
+
+article {
+    min-width: 300px;
+}
+
+.page-not-found {
+    margin: 0 0 30px 0;
+}
+
+.contents {
+    font-size: 16px;
+}
+
+.contents li {
+    margin: 0 0 3px 0;
+}
+
+.contents li p {
+    margin: 0;
+}
+
+.contents table {
+    width: auto;
+}
+
+.sidebar .panel ul {
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.sidebar .panel li {
+    list-style-type: none;
+    margin-bottom: 5px;
+}
+
+.sidebar .panel .created,
+.sidebar .panel .updated {
+    color: #888;
+    font-size: 12px;
+}
+
+.sidebar .panel:last-child {
+    margin-bottom: 5px;
+}
+
+.contents h1,
+.contents h2,
+.contents h3,
+.contents h4,
+.contents h5,
+.contents h6 {
+    position:relative;
+}
+
+.contents .anchor {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    padding-right: 6px;
+    padding-left: 30px;
+    margin-left: -30px;
+}
+
+h1:hover .anchor,
+h2:hover .anchor,
+h3:hover .anchor,
+h4:hover .anchor,
+h5:hover .anchor,
+h6:hover .anchor {
+    height: 1em;
+    padding-left: 8px;
+    margin-left: -30px;
+    line-height: 1;
+    text-decoration: none;
+}
+
+h1 .anchor span.octicon-link,
+h2 .anchor span.octicon-link,
+h3 .anchor span.octicon-link,
+h4 .anchor span.octicon-link,
+h5 .anchor span.octicon-link,
+h6 .anchor span.octicon-link {
+    display: none;
+    color: #000;
+    vertical-align: middle;
+}
+
+h1:hover .anchor span.octicon-link,
+h2:hover .anchor span.octicon-link,
+h3:hover .anchor span.octicon-link,
+h4:hover .anchor span.octicon-link,
+h5:hover .anchor span.octicon-link,
+h6:hover .anchor span.octicon-link {
+    display: inline-block;
+}
+
+.octicon {
+    display: inline-block;
+    font-family: FontAwesome;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.octicon-link:before {
+    content: "\f0c1";
+}
+
+/*
+  Page.modify
+*/
+
+.btn-toolbar {
+    margin-top: -5px;
+    margin-left: 0px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+.btn-toolbar .btn {
+    border: none;
+    margin-left: 0px;
+}
+
+.btn-toolbar .btn:focus {
+    outline: none;
+}
+
+.btn-toolbar .dropdown {
+    display: inline-block;
+}
+
+.btn-toolbar .btn-fullscreen {
+    float: right;
+}
+
+.nav-description span {
+    text-transform: uppercase;
+}
+
+.nav-description a {
+    float: right;
+    color: #aaa;
+    margin: 0 5px;
+}
+
+.nav-description .desc-markdown,
+.nav-description .desc-preview {
+    width: 50%;
+    float: left;
+    padding: 0 10px 5px 10px;
+    color: #aaa;
+}
+
+.nav-description .desc-preview {
+    border-left: 1px solid #ddd;
+}
+
+.editor {
+    height: 300px;
+}
+
+.editor .CodeMirror {
+    height: 100%;
+    width: 100%;
+    float: left;
+    padding: 10px;
+}
+
+.editor #Preview {
+    height: 100%;
+    width: 100%;
+    float: left;
+    overflow-y: auto;
+    padding: 10px;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: #fff;
+}
+
+@media (min-width: 992px) {
+    .editor .CodeMirror {
+        width: 50%;
+        display: block !important;
+    }
+    .editor #Preview {
+        width: 50%;
+        display: block !important;
+        border-left: 1px solid #ddd;
+    }
+}
+
+:-webkit-full-screen { width: 100%; height: 100%; }
+:-moz-full-screen { width: 100%; height: 100%; }
+:full-screen { width: 100%; height: 100%; }
+:fullscreen { width: 100%; height: 100%; }
+
+#Help table ul,
+#Help table ol {
+    margin: 0;
+    padding-left: 1.5em;
+}
+
+#Help blockquote {
+    margin: 0;
+    padding: 0 0 0 10px;
+    font-size: inherit;
+}
+
+/*
+  Page.Diff
+*/
+
+tr.show-diff td {
+    cursor: pointer;
+}
+
+tr.show-diff td .label {
+    padding: .2em .4em .2em;
+    margin: 0 0 0 4px;
+}
+
+.diff-content .nav-tabs {
+    margin-bottom: 15px;
+}
+
+.diff table {
+    width: 100%;
+    background-color: lightgrey;
+    border-spacing: 1px;
+}
+
+.diff tr {
+    background-color: white;
+}
+
+.diff .line {
+    width: 50%;
+}
+
+.diff .line-num {
+    width: 0px;
+    display: none;
+}
+
+.diff .added {
+    background-color: #9e9;
+}
+
+.diff .deleted {
+    background-color: #e99;
+}
+
+.diff code.hljs {
+    font-family: monospace;
+    line-height: 1.3;
+    background: none;
+    font-size: 14px;
+}
+
+/*
+  List.Index
+*/
+
+.page-list .search-form {
+    margin-top: 20px;
+}
+
+.page-list ul.pages {
+    padding: 0;
+    margin: 20px 0;
+    list-style-type: none;
+}
+
+.page-list ul.pages li {
+    margin-bottom: 15px;
+}
+.page-list ul.pages li h4 {
+    margin-bottom: 5px;
+}
+
+.page-list .pagination {
+    margin: 0;
+}

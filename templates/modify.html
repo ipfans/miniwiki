@@ -1,0 +1,193 @@
+{% extends "tmp.html" %}
+{% block moreStyles %}
+        <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/4.4.0/codemirror.min.css">
+{% endblock %}
+{% block moreScripts %}
+        <script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/4.4.0/codemirror.min.js"
+        type="text/javascript" charset="utf-8"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/4.4.0/mode/markdown/markdown.js"
+        type="text/javascript" charset="utf-8"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/4.4.0/addon/mode/overlay.js"
+        type="text/javascript" charset="utf-8"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/4.4.0/mode/gfm/gfm.js"
+        type="text/javascript" charset="utf-8"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"
+        type="text/javascript" charset="utf-8"></script>
+{% endblock %}
+{% block content %}
+            <form method="POST" action="/page/{{ title }}/modify">
+                <div class="page-header clearfix">
+                    <a href="/page/{{ title }}" class="btn btn-default btn-sm btn-back">
+                        <i class="fa fa-arrow-left"></i>
+                    </a>
+                    <h1>Editing: {{ title }}</h1>
+                    <div class="btn-group btn-actions">
+                        <button class="btn btn-primary btn-save click-to-disabled">
+                            <i class="fa fa-check"></i>Save
+                        </button>
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                            <span class="caret">
+                            </span>
+                            <span class="sr-only">
+                                Toggle Dropdown
+                            </span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="/page/{{ title }}/revisions">
+                                    <i class="fa fa-history"></i>Revision
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <input type="hidden" name="page.Hash" value="{{ hash }}">
+                <div class="nav-description hidden-xs hidden-sm clearfix">
+                    <div class="desc-markdown">
+                        <span>
+                            Markdown
+                        </span>
+                        <a href="#Help" class="btn-help" data-toggle="modal">
+                            <i class="fa fa-question-circle">
+                            </i>
+                        </a>
+                        <a href="#Fullscreen" class="btn-fullscreen">
+                            <i class="fa fa-arrows-alt">
+                            </i>
+                        </a>
+                    </div>
+                    <div class="desc-preview">
+                        <span>
+                            Preview
+                        </span>
+                    </div>
+                </div>
+                <ul class="nav nav-tabs visible-sm-block visible-xs-block" role="tablist">
+                    <li class="active">
+                        <a href="#CodeMirror" role="tab" data-toggle="tab">
+                            Markdown
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#Preview" role="tab" data-toggle="tab">
+                            Preview
+                        </a>
+                    </li>
+                </ul>
+                <div class="editor tab-content clearfix">
+                    <textarea id="Editor" name="page.Body">{{ body }}</textarea>
+                    <div class="tab-pane contents" id="Preview">
+                    </div>
+                </div>
+                <span class="error">
+                </span>
+            </form>
+            <div class="modal fade" id="Help" tabindex="-1" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3 class="modal-title">
+                                Markdown Help
+                            </h3>
+                        </div>
+                        <div class="modal-body">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Result
+                                        </th>
+                                        <th>
+                                            Markdown
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <strong>
+                                                Bold
+                                            </strong>
+                                            <em>
+                                                Emphasize
+                                            </em>
+                                            <del>
+                                                Strike
+                                            </del>
+                                        </td>
+                                        <td>
+                                            **Bold** *Emphasize* ~~Strike~~
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="#">
+                                                Page Link
+                                            </a>
+                                        </td>
+                                        <td>
+                                            [[Page Name]] [[Alias|page-name]]
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="#">
+                                                Link
+                                            </a>
+                                        </td>
+                                        <td>
+                                            [title](http://)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <ul>
+                                                <li>
+                                                    List
+                                                </li>
+                                            </ul>
+                                        </td>
+                                        <td>
+                                            * List Item
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <ol>
+                                                <li>
+                                                    Ordered List
+                                                </li>
+                                            </ol>
+                                        </td>
+                                        <td>
+                                            1. Ordered List Item
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><blockquote>Blockquote</blockquote></td>
+                                        <td>&gt; Blockquote</td>
+                                    </tr>
+                                    <tr>
+                                        <td>H1</td>
+                                        <td># Heading</td>
+                                    </tr>
+                                    <tr>
+                                        <td>H2</td>
+                                        <td>## Heading</td>
+                                    </tr>
+                                    <tr>
+                                        <td>H3</td>
+                                        <td>### Heading</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>Inline Code</code></td>
+                                        <td>`code`</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            For further Markdown syntax reference: <a href="http://daringfireball.net/projects/markdown/syntax" target="_blank"> Markdown </a> and <a href="https://help.github.com/articles/github-flavored-markdown" target="_blank">GitHub Flavored Markdown</a>.
+                        </div>
+                    </div>
+                </div>
+            </div>
+{% endblock %}
