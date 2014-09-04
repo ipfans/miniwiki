@@ -39,9 +39,10 @@ func (this *ModifyController) Get() {
 	hash := fmt.Sprintf("%x", sha1.Sum([]byte(body)))
 	this.Commit()
 	pongo2.Render(this.Ctx, "modify.html", pongo2.Context{
-		"title": pageName,
-		"body":  body,
-		"hash":  hash,
+		"title":  pageName,
+		"body":   body,
+		"hash":   hash,
+		"prefix": Prefix,
 	})
 }
 

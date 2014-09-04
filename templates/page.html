@@ -3,7 +3,7 @@
             <div class="page-header clearfix">
                 <h1>{{ title }}</h1>
                 <div class="btn-group btn-actions">
-                    <a href="/page/{{ title }}/modify" class="btn btn-info">
+                    <a href="{{ prefix }}/page/{{ title }}/modify" class="btn btn-info">
                         <i class="fa fa-pencil"></i>Edit
                     </a>
                     <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
@@ -15,7 +15,7 @@
                     </button>
                     <ul class="dropdown-menu" role="menu">
                         <li>
-                            <a href="/page/{{ title }}/revisions">
+                            <a href="{{ prefix }}/page/{{ title }}/revisions">
                                 <i class="fa fa-history">
                                 </i>
                                 Revision
@@ -34,7 +34,7 @@
                         {% else %}
                             <div class="page-not-found">
                                 <h3>This page is not created.</h3>
-                                <p><a href="/page/{{ title }}/modify" class="btn btn-info btn-lg">Create now</a></p>
+                                <p><a href="{{ prefix }}/page/{{ title }}/modify" class="btn btn-info btn-lg">Create now</a></p>
                             </div>
                         {% endif %}
                     </div>

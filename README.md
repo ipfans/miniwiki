@@ -1,14 +1,14 @@
-[中文说明](https://github.com/ipfans/miniwiki/blob/master/READMEZH)
+[中文说明](https://github.com/ipfans/miniwiki/blob/master/READMEZH.md)
 
 README
 ===
 
-Based on [yujiod's wiki](github.com/yujiod/wiki) system, port to beego framework to distribution.
+Based on [yujiod's wiki](https://github.com/yujiod/wiki) system, port to beego framework to distribution.
 
 Build
 ---
 
-1. Download zip archive, unzip it to $GOPATH\src
+1. Download zip archive, unzip it to $GOPATH\src\miniwiki
 
 2. Install dependens:
 
@@ -21,7 +21,7 @@ Build
     go get github.com/shurcooL/go/github_flavored_markdown
     ```
 
-3. make to generate binary file
+3. ```go build``` to generate binary file
 4. ```./main``` to run it, have fun!
 
 License

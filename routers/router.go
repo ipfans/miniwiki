@@ -8,8 +8,10 @@ import (
 
 func init() {
 	controllers.InitDB()
-	beego.Router("/page/", &controllers.PageController{})
-	beego.Router("/page/:page", &controllers.PageController{})
-	beego.Router("/page/:page/modify", &controllers.ModifyController{})
-	beego.Router("/", &controllers.MainController{})
+
+	beego.Router(controllers.Prefix+"/upload/", &controllers.UploadController{})
+	beego.Router(controllers.Prefix+"/page/", &controllers.PageController{})
+	beego.Router(controllers.Prefix+"/page/:page", &controllers.PageController{})
+	beego.Router(controllers.Prefix+"/page/:page/modify", &controllers.ModifyController{})
+	beego.Router(controllers.Prefix+"/", &controllers.MainController{})
 }

@@ -15,9 +15,9 @@
         type="text/javascript" charset="utf-8"></script>
 {% endblock %}
 {% block content %}
-            <form method="POST" action="/page/{{ title }}/modify">
+            <form method="POST" action="{{ prefix }}/page/{{ title }}/modify">
                 <div class="page-header clearfix">
-                    <a href="/page/{{ title }}" class="btn btn-default btn-sm btn-back">
+                    <a href="{{ prefix }}/page/{{ title }}" class="btn btn-default btn-sm btn-back">
                         <i class="fa fa-arrow-left"></i>
                     </a>
                     <h1>Editing: {{ title }}</h1>
@@ -34,7 +34,7 @@
                         </button>
                         <ul class="dropdown-menu" role="menu">
                             <li>
-                                <a href="/page/{{ title }}/revisions">
+                                <a href="{{ prefix }}/page/{{ title }}/revisions">
                                     <i class="fa fa-history"></i>Revision
                                 </a>
                             </li>

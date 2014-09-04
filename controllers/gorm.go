@@ -6,6 +6,7 @@ import (
 
 	"miniwiki/models"
 
+	"github.com/Unknwon/goconfig"
 	"github.com/astaxie/beego"
 	"github.com/jinzhu/gorm"
 	_ "github.com/mattn/go-sqlite3"
@@ -19,6 +20,10 @@ type GormController struct {
 var (
 	DB gorm.DB
 )
+
+var UploadPath string
+var Prefix string
+var UploadUrl string
 
 // 自動マイグレーションを行う
 func InitDB() {
@@ -38,6 +43,20 @@ func InitDB() {
 
 	if err != nil {
 		panic(fmt.Sprintf("Got error when connect database, the error is '%v'", err))
+	}
+
+	c, err := goconfig.LoadConfigFile("wiki.conf")
+	if err != nil {
+		panic(fmt.Sprintf("Read config error: %s", err))
+	}
+	Prefix = c.MustValue("", "prefix")
+	UploadPath = c.MustValue("", "upload")
+	UploadUrl = c.MustValue("", "uploadurl")
+	if UploadPath == "" {
+		UploadPath = "./"
+	}
+	if UploadUrl == "" {
+		UploadUrl = "/static/upload/"
 	}
 
 	DB.AutoMigrate(models.Page{})

@@ -53,5 +53,6 @@ func (this *PageController) Get() {
 		"title":    pageName,
 		"html":     html,
 		"revision": revision,
+		"prefix":   Prefix,
 	})
 }
